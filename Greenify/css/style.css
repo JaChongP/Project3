@@ -1,0 +1,199 @@
+/*Home page*/
+    /*Body*/
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+    /*Header*/
+
+header a{
+    text-decoration: none;
+    color: white;
+}
+.header{
+    background-color: #005461;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+}
+.Logo{
+    font-size: 40px;
+    margin-left: 25px;
+}
+
+            /*Menu Navigation bar*/
+.Menu {
+    display: flex;
+    list-style: none;
+    font-size: 20px;
+    margin-right: 80px;
+}
+.Menu li a{
+    display: block;
+    margin-left: 50px;
+}
+
+    /*Main Body*/
+            /*General Infomation*/
+
+.GenInfo{
+    display: flex;
+    background-color: #6FD2BD;
+    justify-content: space-between;
+    padding: 30px;
+    text-align: center;
+    align-items: center;
+}
+.Info{
+    width: 50%;
+}
+.Info h1{
+    font-size: 40px;
+}
+.Info p{
+    font-size: 25px;
+}
+.Info a{
+    color: honeydew;
+    text-decoration: none;
+    font-size: 20px;
+    background-color: #005461;
+}
+.Info img{
+    width: 500px;
+}
+
+            /*Features Information*/
+.FeatureInfo{
+    display: flex;
+    background-color: honeydew;
+    justify-content: space-around;
+    padding: 30px;
+}
+
+.Feature{
+    text-align: center;
+    color: black;
+}
+.Feature img{
+    width: 150px;
+}
+
+ /*Footer Body*/
+ footer{
+     background-color: #6FD2BD;
+     text-align: center;
+ }
+
+ /*Team page*/
+        /*Members*/
+
+ .teamMembers{
+     display: flex;
+     justify-content: space-around;
+     margin-top: 170px;
+     padding: 0px 15%;
+ }
+
+ .Member img{
+     width: 200px;
+ }
+
+ /*User page*/
+            /*Main User page*/
+.UserPage{
+    display: flex;
+    flex-direction: column;
+}
+            /*Main Containers*/
+#Top, #Bottom{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 15px;
+    border: 2px solid black;
+    border-radius: 15px;
+}
+
+            /*Top Div*/
+.Profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.Profile section{
+    justify-content: space-around;
+    margin: 10px;
+}
+#SecL, #SecR {
+    border: 2px solid black;
+    border-radius: 15px;
+    margin: 10px;
+}
+#SecL{
+    width: 65%;
+}
+
+#SecR{
+    width: 35%;
+    justify-content: space-around;
+    text-align: center;
+}
+
+#S1{
+    width: 20%;
+    text-align: center;
+}
+#S2{
+    width: 80%;
+    justify-content: flex-start;
+}
+
+.User img{
+    width: 150px;
+}
+
+            /*Bottoms Div*/
+.Task{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    border-radius: 15px;
+    margin: 10px;
+}
+#TaskL{
+    width: 65%;
+}
+#TaskR{
+    width: 35%;
+}
+.Task section{
+    display: flex;
+    flex-direction: row;
+}
+#Label{
+    margin-top: 0px;
+    padding: 0px;
+}
+
+#InProcessTask{
+    justify-content: space-around;
+    padding: 10px;
+}
+
+#AssignedTask{
+    width: 25%;
+    text-align: center;
+}
+
+.Statistics{
+    border: 2px solid black;
+    border-radius: 15px;
+    margin: 10px;
+    text-align: center;
+}
