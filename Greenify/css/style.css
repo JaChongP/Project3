@@ -2,120 +2,279 @@
     /*Body*/
 body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    list-style: none;
     margin: 0px;
     padding: 0px;
 }
 
+li{
+    list-style: none;
+}
+
     /*Header*/
+        /*Navigation Bar*/
 
 header a{
     text-decoration: none;
-    color: white;
-}
-.header{
-    background-color: #005461;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    align-items: center;
-}
-.Logo{
-    font-size: 40px;
-    margin-left: 25px;
+    color: #498579;
 }
 
-            /*Menu Navigation bar*/
-.Menu {
+header{
+    height: 10vh;
     display: flex;
-    list-style: none;
-    font-size: 20px;
-    margin-right: 80px;
+    justify-content: space-between;
+    align-items: center;
 }
-.Menu li a{
-    display: block;
-    margin-left: 50px;
+
+.NavigationBar{
+    background-color: white;
+}
+
+#Header2{
+    background-color: #F7F7F7;
+}
+
+.Logo{
+    width: 15%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+#Logo1{
+    background-color: white;
+}
+#Logo2{
+    background-color: #F7F7F7;
+}
+#Logo3{
+    background-color: #498579;
+}
+
+.NavigationBar{
+    width: 85%;
+    height: 100%;
+}
+
+.MenuTop{
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+}
+
+.MenuTop li {
+    margin: 0% 4%;
 }
 
     /*Main Body*/
-            /*General Infomation*/
+        /*General Infomation*/
 
-.GenInfo{
+.GeneralInfo{
     display: flex;
-    background-color: #6FD2BD;
     justify-content: space-between;
-    padding: 30px;
+    padding: 8% 2%;
     text-align: center;
     align-items: center;
 }
-.Info{
-    width: 50%;
-}
-.Info h1{
-    font-size: 40px;
-}
-.Info p{
-    font-size: 25px;
-}
-.Info a{
-    color: honeydew;
-    text-decoration: none;
-    font-size: 20px;
-    background-color: #005461;
-}
-.Info img{
-    width: 500px;
+#InfoL{
+    width: 60%;
 }
 
+#InfoR{
+    width: 40%;
+}
+
+.Information a{
+    text-decoration: none;
+    color: #005461;
+    font-weight: bold;
+}
             /*Features Information*/
-.FeatureInfo{
+.FeaturesInfo{
     display: flex;
-    background-color: honeydew;
+    flex-direction: row;
     justify-content: space-around;
-    padding: 30px;
+    padding: 3% 3%;
 }
 
 .Feature{
+    width: 30%;
     text-align: center;
     color: black;
-}
-.Feature img{
-    width: 150px;
 }
 
  /*Footer Body*/
  footer{
-     background-color: #6FD2BD;
+     height: 25vh;
+     background-color: #498579;
      text-align: center;
  }
 
+ /*SignUp and Loging pages*/
+ .SignUp{
+     height: 90vh;
+     background-color: #F7F7F7;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+ }
+ .SignUp h1{
+     color: #324F49;
+ }
+.SignUpBox{
+    width: 40vw;
+    height: 65vh;
+    background-color: #E2EDE6;
+    border-radius: 3%;
+    margin-bottom: 10%;
+}
+.container{
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    padding: 10% 20%;
+}
+input[type=text], input[type=password]{
+    width: 100%;
+    padding: 3%;
+    margin: 2% 0% 5% 0%;
+    border: none;
+    border-radius: 50px;
+    background: #FFFFFF;
+}
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #F7F7F7;
+    outline: none;
+}
+
+button {
+    background-color: #498579;
+    color: white;
+    padding: 2%;
+    border: none;
+    cursor: pointer;
+}
+
  /*Team page*/
         /*Members*/
-
- .teamMembers{
+.teamMembers{
      display: flex;
      justify-content: space-around;
-     margin-top: 170px;
+     margin-top: 10%;
+     margin-bottom: 10%;
      padding: 0px 15%;
- }
+}
 
- .Member img{
+.Member img{
      width: 200px;
- }
+}
 
- #UserPage{
+/*Userpage*/
+.UserPage{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 0px;
 }
 
-.MenuBar{
+.Menu{
+    width: 15vw;
+    height: 90vh;
+    background-color: gray;
+}
+.Menu a{
+    color: white;
+    text-decoration: none;
+    margin-top: 10%;
+}
+
+ .Profile{
+     width: 90vw;
+     height: 90vh;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-around;
+ }
+
+.ProfileTop{
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#UserProgress{
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 1%;
+}
+#Achivements{
+    width: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 1%;
+}
+.Achivement{
+    width: 22%;
+    height: 50%;
+    background-color: dimgray;
+}
+
+.UserL{
     width: 15%;
-    height: calc(100vh - 10%);
+    justify-content: space-around;
+    text-align: center;
+    margin: 2% 1% 2% 2%;
+}
+.UserL img{
+    width: 70%;
+}
+
+.UserR{
+    width: 70%;
+    margin: 2%;
+}
+
+.ProfileBot{
+    height: 70%;
+    display: flex;
+    flex-direction: row;
+}
+
+.TaskDiv{
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.Task{
+    width: 20%;
+    height: 80%;
+    background-color: dimgray;
+    margin-top: 5%;
+}
+
+.UserStadistics{
+    width: 30%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    background-color: gray;
-
 }
+
+#Top{
+    width: 98%;
+    height: 55%;
+    text-align: center;
+    margin: 1%;
+}
+
+#Bot{
+    width: 98%;
+    height: 40%;
+    text-align: center;
+    margin: 1%;
+}
+
+/*Shop Info page*/
