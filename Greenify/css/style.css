@@ -39,6 +39,7 @@ header{
     justify-content: space-around;
     align-items: center;
     text-align: center;
+    padding: 10px;
 }
 #Logo1{
     background-color: white;
