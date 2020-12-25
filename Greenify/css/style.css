@@ -332,13 +332,6 @@ input[type=text]:focus, input[type=password]:focus {
     outline: none;
 }
 
-button {
-    background-color: #498579;
-    color: white;
-    padding: 2%;
-    border: none;
-    cursor: pointer;
-}
 
  /*Team page*/
         /*Members*/
