@@ -32,7 +32,7 @@
                             <input type="password" placeholder="Password" name="psw" required>
                             <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
                             <div class="clearfix">
-                                <button type="submit" class="signupbtn">GET STARTED</button>
+                                <button type="submit" class="green-button">GET STARTED</button>
                             </div>
                         </div>
                     </form>
