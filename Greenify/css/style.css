@@ -121,6 +121,12 @@ h3 {
     margin:0;
 }
 
+h4 {
+    color: #1f4f46;
+    padding:0;
+    margin:0;
+}
+
 h5 {
     padding:0;
     margin:0;
@@ -288,7 +294,6 @@ p {
 
  /*Footer*/
 
-
  footer {
     display: flex;
     flex-direction: column;
@@ -313,7 +318,8 @@ p {
 
 
 
- /*SignUp and Loging pages*/
+ /*sign up and sign in pages*/
+
  .SignUp{
      height: 90vh;
      background-color: #F7F7F7;
@@ -383,7 +389,7 @@ input[type=text]:focus, input[type=password]:focus {
   .side-nav li a {
     display: block;
     color: white;
-    padding: 4vh;
+    padding: 5vh;
     text-decoration: none;
     font-size: 12px;
   }
@@ -394,7 +400,7 @@ input[type=text]:focus, input[type=password]:focus {
 }
 
  .logo-white img {
-    padding: 4vh 4vh 20vh 4vh;
+    padding: 4vh 4vh 20vh 5vh;
     width: 8vw;
 }
 
@@ -434,26 +440,30 @@ input[type=text]:focus, input[type=password]:focus {
 
 .profile-top {
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 5fr;
     margin: 5% 10% 0 25%;
 }
 
-.profile-top img{
+.profile-top img {
     width: 7vw;
 }
 
 .grid-container {
     display: grid;
-    margin: 3% 10% 10% 25%;
+    margin: 3% 10% 0 25%;
+    padding-bottom: 40vh;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 4%;
     align-items: center;
     justify-content: center;
 }
 
-.grid-container h3{
+.grid-container h4 {
     padding: 1.5vw;
-   
+}
+
+.grid-container p {
+    padding: 1.5vw;
 }
 
 .grid-container div {
@@ -465,24 +475,23 @@ input[type=text]:focus, input[type=password]:focus {
 }
 
 
-
-/*Shop Info page*/
+/*shop info page*/
 
 .stores-heading {
     display: flex;
     flex-direction: column;
     margin: 3% 10% 3% 25%;
-
 }
 
 .store-categories {
     display: flex;
-
 }
 
 .store-categories h5 {
-    padding: 2vw 2vw 0 0;
+    padding: 2vw 4vw 0 0;
 }
+
+
 
 
 
