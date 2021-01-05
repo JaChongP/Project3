@@ -366,7 +366,7 @@ input[type=text]:focus, input[type=password]:focus {
 }
 
  .Profile{
-     width: 90vw;
+     width: 85vw;
      height: 90vh;
      display: flex;
      flex-direction: column;
