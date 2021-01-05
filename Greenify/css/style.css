@@ -111,6 +111,20 @@ h1 {
 h2 {
     line-height: 1.5;
     color: #1f4f46;
+    padding:0;
+    margin:0;
+}
+
+h3 {
+    color: #1f4f46;
+    padding:0;
+    margin:0;
+}
+
+h5 {
+    padding:0;
+    margin:0;
+    color: #1f4f46;
 }
 
 p {
@@ -128,14 +142,14 @@ p {
 
 
 
-header a {
+.header a {
     text-decoration: none;
     color: white;
     font-weight: 600;
     
 }
 
-header {
+.header {
     height: 10vh;
     display: flex;
     justify-content: space-between;
@@ -148,9 +162,10 @@ header {
     text-decoration: none;
     color: #1f4f46;
     font-weight: 600;
+    margin: 0;
+    padding: 0;
+
 }
-
-
 
 .Logo {
     width: 15%;
@@ -183,7 +198,7 @@ header {
 
 
     /*Main Body*/
-        /*General Infomation*/
+    /*General Infomation*/
 
 .GeneralInfo {
     display: flex;
@@ -212,8 +227,6 @@ header {
     width: 70%;
 }
 
-
-
 .green-button {
    
     background-color: #498579;
@@ -234,7 +247,9 @@ header {
   }
 
 
-            /*Features Information*/
+
+  /*Features Information*/
+
 .FeaturesInfo{
     display: flex;
     justify-content: space-around;
@@ -242,13 +257,10 @@ header {
 }
 
 .FeaturesInfo img {
-    width: 12vw;
-    
-   
+    width: 12vw;   
 }
 
 .Feature {
-
     padding: 5vw;
 }
 
@@ -339,7 +351,6 @@ input[type=text]:focus, input[type=password]:focus {
     outline: none;
 }
 
-
  /*Team page*/
         /*Members*/
 .teamMembers{
@@ -356,114 +367,125 @@ input[type=text]:focus, input[type=password]:focus {
 
 
 
+/*user page navigation bars*/
 
-
-/*Userpage*/
-.UserPage{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.Menu{
-    width: 15vw;
-    height: 90vh;
-    background-color: gray;
-}
-.Menu a{
-    color: white;
-    text-decoration: none;
-    margin-top: 10%;
-}
-
- .Profile{
-     width: 85vw;
-     height: 90vh;
-     display: flex;
-     flex-direction: column;
-     justify-content: space-around;
- }
-
-.ProfileTop{
-    height: 30%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-#UserProgress{
-    width: 70%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 1%;
-}
-#Achivements{
-    width: 30%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    margin: 1%;
-}
-.Achivement{
-    width: 22%;
-    height: 50%;
-    background-color: dimgray;
-}
-
-.UserL{
+.side-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
     width: 15%;
-    justify-content: space-around;
+    background-color: #498579;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+  }
+  
+  .side-nav li a {
+    display: block;
+    color: white;
+    padding: 4vh;
+    text-decoration: none;
+    font-size: 12px;
+  }
+
+  .logo-white {
+    width: 15%;
+    height: 100%;
+}
+
+ .logo-white img {
+    padding: 4vh 4vh 20vh 4vh;
+    width: 8vw;
+}
+
+.small-icon {
+    width: 10px;
+    margin-right: 15px;
+}
+
+.top-nav-user ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    
+  }
+  
+  .top-nav-user li {
+    float: right;
+  }
+  
+  .top-nav-user li a {
+    display: block;
     text-align: center;
-    margin: 2% 1% 2% 2%;
-}
-.UserL img{
-    width: 70%;
+    color: #498579;
+    padding: 4vh;
+    text-decoration: none;
+  }
+
+
+
+
+/*user page body*/
+
+.profile-pages {
+    background-color: #F7F7F7;
 }
 
-.UserR{
-    width: 70%;
-    margin: 2%;
+.profile-top {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    margin: 5% 10% 0 25%;
 }
 
-.ProfileBot{
-    height: 70%;
-    display: flex;
-    flex-direction: row;
+.profile-top img{
+    width: 7vw;
 }
 
-.TaskDiv{
-    width: 70%;
-    display: flex;
-    justify-content: space-around;
+.grid-container {
+    display: grid;
+    margin: 3% 10% 10% 25%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 4%;
+    align-items: center;
+    justify-content: center;
 }
 
-.Task{
-    width: 20%;
-    height: 80%;
-    background-color: dimgray;
-    margin-top: 5%;
+.grid-container h3{
+    padding: 1.5vw;
+   
 }
 
-.UserStadistics{
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+.grid-container div {
+    
+    height: 50vh;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
-#Top{
-    width: 98%;
-    height: 55%;
-    text-align: center;
-    margin: 1%;
-}
 
-#Bot{
-    width: 98%;
-    height: 40%;
-    text-align: center;
-    margin: 1%;
-}
 
 /*Shop Info page*/
+
+.stores-heading {
+    display: flex;
+    flex-direction: column;
+    margin: 3% 10% 3% 25%;
+
+}
+
+.store-categories {
+    display: flex;
+
+}
+
+.store-categories h5 {
+    padding: 2vw 2vw 0 0;
+}
+
+
+
+
+
+
