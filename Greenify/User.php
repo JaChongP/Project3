@@ -1,3 +1,22 @@
+<?php
+  session_start();
+
+  require 'database.php';
+
+  if (isset($_SESSION['user_id'])) {
+    $records = $conn->prepare('SELECT userid, name, email, password FROM users WHERE userid = :userid');
+    $records->bindParam(':userid', $_SESSION['user_id']);
+    $records->execute();
+    $results = $records->fetch(PDO::FETCH_ASSOC);
+
+    $user = null;
+
+    if (count($results) > 0) {
+      $user = $results;
+    }
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +46,7 @@
 
             <div class="top-nav-user">
                 <ul class="top-nav-user">
-                    <li><a href="">Sign Out</a></li>
+                    <li><a href="LogOut.php">Sign Out</a></li>
                     <li><a href="">Redeem</a></li>
                 
                 </ul>
@@ -41,7 +60,9 @@
     </div>
 
     <div>
-            <h2>User Profile</h2>
+        <?php if(!empty($user)): ?>
+            <h2><?= $user['name']; ?></h2>
+        <?php endif; ?>
             <h5>Level 10</h5>
             <h5>Earth Warrior</h5>
     </div>
