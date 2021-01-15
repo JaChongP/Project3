@@ -36,8 +36,8 @@
                     <li><div class="logo-white">
                         <img src="images/logo-white.png">
                     </div></li>
-                    <li><a href="User.html"><img src="images/icon-home.png" class="small-icon">Home</a></li>
-                    <li><a href="ShopInfo.html"><img src="images/icon-stores.png" class="small-icon">Stores</a></li>
+                    <li><a href="User.php"><img src="images/icon-home.png" class="small-icon">Home</a></li>
+                    <li><a href="ShopInfo.php"><img src="images/icon-stores.png" class="small-icon">Stores</a></li>
                     <li><a href=""><img src="images/icon-guide.png" class="small-icon">Guide</a></li>
                   </ul>
                 </div>
