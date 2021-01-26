@@ -38,7 +38,9 @@
                     </div></li>
                     <li><a href="User.php"><img src="images/icon-home.png" class="small-icon">Home</a></li>
                     <li><a href="ShopInfo.php"><img src="images/icon-stores.png" class="small-icon">Stores</a></li>
+                    <li><a href=""><img src="images/icon-redeem.png" class="small-icon">Redeem</a></li>
                     <li><a href=""><img src="images/icon-guide.png" class="small-icon">Guide</a></li>
+                    <li><a href=""><img src="images/icon-help.png" class="small-icon">Help</a></li>
                   </ul>
                 </div>
             
@@ -47,8 +49,6 @@
             <div class="top-nav-user">
                 <ul class="top-nav-user">
                     <li><a href="LogOut.php">Sign Out</a></li>
-                    <li><a href="">Redeem</a></li>
-                
                 </ul>
             </div>
 </header>
@@ -76,9 +76,6 @@
         <div><h4>Badges</h4></div>
         <div><h4>CO<sub>2</sub> Consumption</h4></div>
     </section>
-
-
-
 
  <script src="script.js"></script>
 
