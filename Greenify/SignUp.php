@@ -29,15 +29,15 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="header">
-        <div class="Logo" id="Logo2">
-            <a class="Logo" href="HomePage.html"><img src="images/logoGreenify.png" width="60%"></a>
+<header class="header-about" id="Header1">
+        <div class="Logo" id="Logo1">
+            <a href="HomePage.html"><img src="images/logoGreenify.png"></a>
         </div>
-        <div class="NavigationBar" id="NB2">
+        <div class="NavigationBar" id="NB1">
             <nav>
                 <ul class="MenuTop">
-                    <li><a href="Redeem.html">About</a></li>
-                    <li><a href="User.php">Login</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="Login.php">Sign in</a></li>
                 </ul>
             </nav>
         </div>
@@ -52,11 +52,12 @@
                         <input type="text" name="name" placeholder="Name">
                         <input type="text" name="email" placeholder="Email">
                         <input type="password" name="password" placeholder="Password">
-                        <input type="password" name="confirm_password" placeholder="ConfirmPassword">
-                        <input type="submit" class="green-button" value="Get Started">
+                        <input type="password" name="confirm_password" placeholder="Confirm Password">
+                        <input type="submit" class="green-button" value="SIGN UP">
                         </div>
                     </form>
-                    <span>or <a href="Login.php">Login</a></span>
+                    <span class="sign-up-suggest">Already have an account? <a href="Login.php">Log in</a></span>
+
                     <?php if(!empty($message)): ?>
                         <p> <?= $message ?></p>
                     <?php endif; ?>
