@@ -1,3 +1,5 @@
+//to make elements appear smoothly when scrolling
+
 var scroll = window.requestAnimationFrame ||
             function (callback){ window.setTimeout(callback, 1000/60)};
 
@@ -37,7 +39,7 @@ function isElementInViewport(el) {
 
 
 
-  
+//to make the tutorial page dynamic 
 
 var tabs = document.querySelectorAll("[id^='tabHeader_']");
 var tabPages = document.getElementsByClassName("tabpage");
@@ -88,5 +90,6 @@ function nextTab(){
   	switchTab(parseInt(currentTab)+1);
   }  
 }
+
 
 

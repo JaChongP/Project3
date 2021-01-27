@@ -567,6 +567,8 @@ input[type=text]:focus, input[type=password]:focus {
 }
 
 
+
+
 /* tutorial page */ 
 
 .footer-tutorial {
@@ -574,9 +576,12 @@ input[type=text]:focus, input[type=password]:focus {
 }
 
 .tabContainer {
-    margin: 50px;
+    
     width: 30vw;
     padding: 15px;
+    text-align: center;
+    position: relative; 
+    left: 32%;
   }
 
   .tabs {
@@ -600,30 +605,42 @@ input[type=text]:focus, input[type=password]:focus {
   }
 
   .tabscontent {
-
     padding: 10px 10px 25px;
     background: #FFFFFF;
     margin: 0;
   }
 
-  .gototab {
+  .gototab button{
     background: #38665D;
+    font-family: 'Open Sans', sans-serif;
+    border: none;
     color: #fff;
     border-radius: 20px;
     padding: 10px 28px;
+    width: 15vw;
     text-align: center;
     text-decoration: none;
-    float: left;
-    margin: 10px;
+    text-align: center;
+    margin: 20px;
     font-size: 12px;
     transition-duration: 0.4s;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
     letter-spacing: 1.6px;
   }
 
-  .tutorial-img {
-      width: 70%;
+  .gototab button:hover {
+    background-color: #1f4f46;
   }
+
+  .tutorial-img {
+      width: 80%;
+  }
+
+  .progress-bar {
+      width: 6vw;
+  }
+
+ 
 
   
   
