@@ -253,6 +253,7 @@ p {
     text-decoration: none;
     border-radius: 20px;
     font-size: 12px;
+    font-family: 'Open Sans', sans-serif;
     transition-duration: 0.4s;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
     letter-spacing: 1.6px;
@@ -363,7 +364,7 @@ input[type=text], input[type=password]{
     background: #FFFFFF;
 }
 input[type=text]:focus, input[type=password]:focus {
-    background-color: #F7F7F7;
+    background-color: #f5f5f5;
     outline: none;
 }
 
@@ -550,12 +551,12 @@ input[type=text]:focus, input[type=password]:focus {
 
 /* help page */
 
+
 .help-body {
     margin: 8% 10% 0 25%;
 }
 
 .help-grid {
-    
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
@@ -564,6 +565,32 @@ input[type=text]:focus, input[type=password]:focus {
     font-weight: 600; 
     line-height: 2;
     color: #38665D;
+}
+
+.form-control {
+    font-family: 'Open Sans';
+    width: 20vw;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.contact-form {
+    
+    border-radius: 30px;
+    margin-top: 3vh;
+}
+
+#text-area {
+    font-family: 'Open Sans';
+    width: 20vw;
+    padding: 40px 15px;
+    margin: 15px 0;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
 
