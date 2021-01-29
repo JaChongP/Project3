@@ -1,20 +1,21 @@
 <?php
-  session_start();
-
-  require 'database.php';
-
-  if (isset($_SESSION['user_id'])) {
-    $records = $conn->prepare('SELECT userid, name, email, password FROM users WHERE userid = :userid');
-    $records->bindParam(':userid', $_SESSION['user_id']);
-    $records->execute();
-    $results = $records->fetch(PDO::FETCH_ASSOC);
-
-    $user = null;
-
-    if (count($results) > 0) {
-      $user = $results;
-    }
-  }
+// We need to use sessions, so you should always start sessions using the below code.
+session_start();
+include 'includes/database.php';
+// If the user is not logged in redirect to the login page...
+if (!isset($_SESSION['loggedin'])) {
+	header('Location: HomePage.html');
+	exit;
+} else {
+// We don't have the password or email info stored in sessions so instead we can get the results from the database.
+$stmt = $conn->prepare('SELECT user_name, user_experience FROM users WHERE user_id = ?');
+// In this case we can use the account ID to get the account info.
+$stmt->bind_param('i', $_SESSION['id']);
+$stmt->execute();
+$stmt->bind_result($name, $experience);
+$stmt->fetch();
+$stmt->close();
+}
 ?>
 
 <!DOCTYPE html>
@@ -60,10 +61,9 @@
     </div>
 
     <div>
-        <?php if(!empty($user)): ?>
-            <h2><?= $user['name']; ?></h2>
-        <?php endif; ?>
-            <h5>Level 10</h5>
+            <h2><?= $name ?></h2>
+
+            <h5><?= $experience ?></h5>
             <h5>Earth Warrior</h5>
     </div>
 </section>
