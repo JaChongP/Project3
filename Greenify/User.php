@@ -7,7 +7,7 @@ if (!isset($_SESSION['loggedin'])) {
 	header('Location: HomePage.html');
 	exit;
 } else {
-// We don't have the password or email info stored in sessions so instead we can get the results from the database.
+// We don't have the usrname or the experience info stored in sessions so instead we can get the results from the database.
 $stmt = $conn->prepare('SELECT user_name, user_experience FROM users WHERE user_id = ?');
 // In this case we can use the account ID to get the account info.
 $stmt->bind_param('i', $_SESSION['id']);
