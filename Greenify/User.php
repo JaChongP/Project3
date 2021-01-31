@@ -73,6 +73,7 @@ $stmt->close();
         <div><h4>Tasks</h4></div>
         <div><h4>Progress</h4></div>
         <div><h4>Rewards</h4></div>
+        
         <div><h4>Activity log</h4></div>
         <div><h4>Badges</h4></div>
         <div><h4>CO<sub>2</sub> Consumption</h4></div>
