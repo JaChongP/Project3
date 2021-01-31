@@ -42,6 +42,7 @@ $stmt->close();
                     <li><a href=""><img src="images/icon-redeem.png" class="small-icon">Redeem</a></li>
                     <li><a href=""><img src="images/icon-guide.png" class="small-icon">Guide</a></li>
                     <li><a href=""><img src="images/icon-help.png" class="small-icon">Help</a></li>
+                    <li><a href="Quiz.php"><img src="images/icon-help.png" class="small-icon">Quiz</a></li>
                   </ul>
                 </div>
             
@@ -63,7 +64,7 @@ $stmt->close();
     <div>
             <h2><?= $name ?></h2>
 
-            <h5><?= $experience ?></h5>
+            <h5>Your actual experience is: <?= $experience ?> pts!</h5>
             <h5>Earth Warrior</h5>
     </div>
 </section>
@@ -77,7 +78,7 @@ $stmt->close();
         <div><h4>CO<sub>2</sub> Consumption</h4></div>
     </section>
 
- <script src="script.js"></script>
+ <script src="js/script.js"></script>
 
 </body>
 </html>
