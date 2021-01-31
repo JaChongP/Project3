@@ -73,8 +73,36 @@ $stmt->close();
         <div><h4>Tasks</h4></div>
         <div><h4>Progress</h4></div>
         <div><h4>Rewards</h4></div>
+
+        <div>
+        <h4>Tip of the day</h4>
+
+        <?php
+
+            $result = mysqli_query($conn,"SELECT * FROM dailytips order by RAND() limit 1");
+ 
+          
+            $i=0;
+            while($row = mysqli_fetch_array($result)) {
+            ?>
+
+            <tr>
+            <td>
+            
+            <?php $tip = $row['tip_name']; 
+            echo "<h4>{$tip}</h4>";
+
+            ?></td>
+           
+            </tr>
+            <?php
+            $i++;
+            }
+ ?>
         
-        <div><h4>Activity log</h4></div>
+        
+        </div>
+
         <div><h4>Badges</h4></div>
         <div><h4>CO<sub>2</sub> Consumption</h4></div>
     </section>
