@@ -22,6 +22,7 @@
                     <li><a href="Redeem.php"><img src="images/icon-redeem.png" class="small-icon">Redeem</a></li>
                     <li><a href="guide.html"><img src="images/icon-guide.png" class="small-icon">Guide</a></li>
                     <li><a href="help.html"><img src="images/icon-help.png" class="small-icon">Help</a></li>
+                    <li><a href="Quiz.php"><img src="images/icon-help.png" class="small-icon">Quiz</a></li>
                   </ul>
                 </div>
             
