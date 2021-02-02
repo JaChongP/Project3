@@ -28,33 +28,7 @@ $stmt->close();
 </head>
 <body class="user-page">
 
-   <header>    
-            <nav>
-                </div>
-
-                <div class="side-nav">
-                <ul class="side-nav">
-                    <li><div class="logo-white">
-                        <img src="images/logo-white.png">
-                    </div></li>
-                    <li><a href="User.php"><img src="images/icon-home.png" class="small-icon">Dashboard</a></li>
-                    <li><a href="ShopInfo.php"><img src="images/icon-stores.png" class="small-icon">Stores</a></li>
-                    <li><a href="Redeem.php"><img src="images/icon-redeem.png" class="small-icon">Redeem</a></li>
-                    <li><a href="guide.html"><img src="images/icon-guide.png" class="small-icon">Guide</a></li>
-                    <li><a href="help.html"><img src="images/icon-help.png" class="small-icon">Help</a></li>
-                    <li><a href="Quiz.php"><img src="images/icon-help.png" class="small-icon">Quiz</a></li>
-                  </ul>
-                </div>
-            
-            </nav>
-
-            <div class="top-nav-user">
-                <ul class="top-nav-user">
-                    <li><a href="LogOut.php">Sign Out</a></li>
-                </ul>
-            </div>
-</header>
-
+<?php include "./usernav.html" ?>
 
 <section class="profile-top">
     <div>
@@ -73,7 +47,36 @@ $stmt->close();
         <div><h4>Tasks</h4></div>
         <div><h4>Progress</h4></div>
         <div><h4>Rewards</h4></div>
-        <div><h4>Activity log</h4></div>
+
+        <div>
+        <h4>Tip of the day</h4>
+
+        <?php
+
+            $result = mysqli_query($conn,"SELECT * FROM dailytips order by RAND() limit 1");
+ 
+          
+            $i=0;
+            while($row = mysqli_fetch_array($result)) {
+            ?>
+
+            <tr>
+            <td>
+            
+            <?php $tip = $row['tip_name']; 
+            echo "<h4>{$tip}</h4>";
+
+            ?></td>
+           
+            </tr>
+            <?php
+            $i++;
+            }
+ ?>
+        
+        
+        </div>
+
         <div><h4>Badges</h4></div>
         <div><h4>CO<sub>2</sub> Consumption</h4></div>
     </section>

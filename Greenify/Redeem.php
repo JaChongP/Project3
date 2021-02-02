@@ -8,9 +8,7 @@
 </head>
 <body class="user-page">
 
-   <header>    
-            <nav>
-                </div>
+<?php include "./usernav.html" ?>
 
                 <div class="side-nav">
                 <ul class="side-nav">
@@ -34,3 +32,5 @@
                 </ul>
             </div>
 </header>
+</body>
+</html>
