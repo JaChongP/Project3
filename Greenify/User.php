@@ -1,15 +1,15 @@
 <?php
-// We need to use sessions, so you should always start sessions using the below code.
+
 session_start();
 include 'includes/database.php';
-// If the user is not logged in redirect to the login page...
+
 if (!isset($_SESSION['loggedin'])) {
 	header('Location: HomePage.html');
 	exit;
 } else {
-// We don't have the usrname or the experience info stored in sessions so instead we can get the results from the database.
+
 $stmt = $conn->prepare('SELECT user_name, user_experience FROM users WHERE user_id = ?');
-// In this case we can use the account ID to get the account info.
+
 $stmt->bind_param('i', $_SESSION['id']);
 $stmt->execute();
 $stmt->bind_result($name, $experience);
