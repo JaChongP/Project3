@@ -7,19 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header class="header-about" id="Header1">
-        <div class="Logo" id="Logo1">
-            <a href="HomePage.html"><img src="images/logoGreenify.png"></a>
-        </div>
-        <div class="NavigationBar" id="NB1">
-            <nav>
-                <ul class="MenuTop">
-                    <li><a href="About.html">About</a></li>
-                    <li><a href="Login.php">Sign in</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<?php include "includes/complements/navbar.php" ?>
     <main class="SignUp">
         <div class="SignUp">
             <h1>Sign Up</h1>
@@ -43,8 +31,6 @@
             </div>
         </div>
     </main>
-    <footer>
-
-    </footer>
+    <?php include "includes/complements/footer.php" ?>
 </body>
 </html>

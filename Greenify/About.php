@@ -8,20 +8,7 @@
 </head>
 <body>
 
-    <header class="header-about" id="Header1">
-        <div class="Logo" id="Logo1">
-            <a href="HomePage.html"><img src="images/logoGreenify.png"></a>
-        </div>
-        <div class="NavigationBar" id="NB1">
-            <nav>
-                <ul class="MenuTop">
-                    <li><a href="About.html">About</a></li>
-                    <li><a href="SignUp.php">Sign up</a></li>
-                    <li><a href="Login.php">Login</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<?php include "includes/complements/navbar.php" ?>
 
     <div class="GeneralInfo">
         <div class="Information" id="InfoL">
@@ -77,10 +64,10 @@
         </section>
 
         <section class="Feature inline-photo show-on-scroll">
-            <img src="images/.png">
+            <img src="images/photos/Josean.png">
             <h2>Josean Portillo</h2>
             <p>
-                MISSING TEXT.
+                 Venezuelan, 27 years old and currently studying Creative Technologies in Portugal.
             </p>
         </section>
 
@@ -94,22 +81,7 @@
 
     </div>
 
-    <footer>
-
-
-        <div class="footer-icons">
-
-            <img src="images/icon-facebook.svg">
-            <img src="images/icon-instagram.svg">
-            <img src="images/icon-linkedin.svg">
-
-        </div>
-
-        <div>
-            <p>© 2020 Greenify. All rights reserved </p>
-        </div>
-
-    </footer>
+    <?php include "includes/complements/footer.php" ?>
 
     <script src="js/script.js"></script>
 

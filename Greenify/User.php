@@ -28,7 +28,7 @@ $stmt->close();
 </head>
 <body class="user-page">
 
-<?php include "./usernav.html" ?>
+<?php include "includes/complements/usernav.php" ?>
 
 <section class="profile-top">
     <div>
