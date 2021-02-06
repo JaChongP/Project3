@@ -8,6 +8,14 @@ if (!isset($_SESSION['loggedin'])) {
 	exit;
 } else {
 
+$stmt = $conn->prepare('SELECT user_name, user_experience FROM users WHERE user_id = ?');
+
+$stmt->bind_param('i', $_SESSION['id']);
+$stmt->execute();
+$stmt->bind_result($name, $experience);
+$stmt->fetch();
+$stmt->close();
+}
 ?>
 
 <!DOCTYPE html>
@@ -28,9 +36,9 @@ if (!isset($_SESSION['loggedin'])) {
     </div>
 
     <div>
-            <h2><?= $user['user_name'] ?></h2>
+            <h2><?= $name ?></h2>
 
-            <h5>Level <?= $user['user_level'] ?></h5>
+            <h5>Your actual experience is: <?= $experience ?> pts!</h5>
             <h5>Earth Warrior</h5>
     </div>
 </section>
