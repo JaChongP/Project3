@@ -62,7 +62,6 @@
 		        </form>
 <!-- for each task that is "checked" add 1 to total number of tasks" --> 
         </div>
-        <label for=""></label>
 
         <div>
             
