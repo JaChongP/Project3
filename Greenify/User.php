@@ -84,7 +84,54 @@
 
         <div>
         <h4>Tip of the day</h4>
+        <?php
 
+            $result = mysqli_query($conn,"SELECT * FROM dailytips order by RAND() limit 1");
+ 
+            $i=0;
+            while($row = mysqli_fetch_array($result)) {
+            ?>
+
+            <tr>
+            <td>
+            
+            <?php $tip = $row['tip_name']; 
+            echo "<p>{$tip}</p>";
+
+            ?></td>
+           
+            </tr>
+            <?php
+            $i++;
+            }
+
+
+            /*
+             * $sql = "SELECT task_points FROM tasks"; //select the data
+            $result = mysqli_query($conn, $sql); //query it inside the database
+            $tasks = array(); //create an empty array 
+
+
+            if (mysqli_num_rows($result) > 0) {  //if there are more than 0 results, basically if there is any data available
+                while($row = mysqli_fetch_assoc($result)) { //run this loop - while we have results from the database, spit it out ($row is the data)
+                    
+                    $tasks[] = $row; //take the data ($row) and put it inside the $tasks array
+                }
+            }
+
+            //print_r($tasks);
+
+            foreach ($tasks[0] as $task) {
+                echo $task;
+            }
+             
+        *$sql="SELECT ut.user_id, ut.task_id, t.task_name, t.task_points, t.task_value
+        *FROM users_tasks ut
+        *INNER JOIN tasks t ON ut.task_id = t.task_id 
+        *WHERE ut.user_id = " .$_SESSION[id];
+        */
+ ?>
+        
 
         
         </div>
