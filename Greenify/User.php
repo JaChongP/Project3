@@ -49,20 +49,26 @@ $stmt->close();
             <h4>Tasks</h4>
 
         <?php
- 
+
+            //get the tasks from the database
           $sql = "SELECT * FROM tasks ORDER BY task_id;";
             $result = mysqli_query($conn, $sql);
             $resultCheck = mysqli_num_rows($result);
-
              
         ?>
 
+<!-- add action -TaskProcess.php so when you press submit the data is sent and processed by the code in the file TaskProcess.php 
+the file TaskProcess spits out the number of tasks
+-->
+ 
 
-<form method="post" action="TaskProcess.php">
+<form method="post" action="TaskProcess.php"> 
     <?php
+
+//while there is any data echo the tasks with checkboxes
 if ($resultCheck > 0) {
     
-            while ($row = mysqli_fetch_assoc($result)) {
+            while ($row = mysqli_fetch_assoc($result)) { //run this loop - while we have results from the database, spit it out ($row is the data)
                     //echo "<pre>"; print_r ($row); die();
   
             
@@ -73,19 +79,12 @@ if ($resultCheck > 0) {
         }
     ?>
 
+    <!-- ??? -->
     <input type="hidden" name="user_id" value="<?=$_SESSION['id']?> "/>
 
     <input type="submit" class="green-button" value="SUBMIT" name="submit">
 
 </form>
-
-
-
-<!-- 
-
-for each task that is "checked" add 1 to total number of tasks" 
-
-            --> 
         
         </div>
         <div>
@@ -96,14 +95,8 @@ for each task that is "checked" add 1 to total number of tasks"
 
 
         <?php
-        /**
-         
-        *$sql="SELECT ut.user_id, ut.task_id, t.task_name, t.task_points, t.task_value
-        *FROM users_tasks ut
-        *INNER JOIN tasks t ON ut.task_id = t.task_id 
-        *WHERE ut.user_id = " .$_SESSION[id];
-        */
 
+        
         $sql= "SELECT COUNT(ut.task_id) FROM users_tasks ut WHERE ut.user_id = ".$_SESSION[id];
         $result = mysqli_query($conn, $sql);
         $numberOfTasks = $result->fetch_row()[0];
@@ -114,9 +107,6 @@ for each task that is "checked" add 1 to total number of tasks"
 
     </div>
 
-
-        
-    
     
     <div id="rewards-section">
             <h4>Rewards</h4>
@@ -133,20 +123,12 @@ $sql= "SELECT SUM(t.task_points) FROM users_tasks ut INNER JOIN tasks t ON t.tas
         
         <img src="images/coin.png">
         <h1><?=$numberOfCoins;?></h1>
-            
-            
-
-  
-        
+    
         
         </div>
 
-
-
-
-
-    
-
+        
+        
         <div>
         <h4>Tip of the day</h4>
 
@@ -154,7 +136,6 @@ $sql= "SELECT SUM(t.task_points) FROM users_tasks ut INNER JOIN tasks t ON t.tas
 
             $result = mysqli_query($conn,"SELECT * FROM dailytips order by RAND() limit 1");
  
-          
             $i=0;
             while($row = mysqli_fetch_array($result)) {
             ?>
@@ -191,7 +172,12 @@ $sql= "SELECT SUM(t.task_points) FROM users_tasks ut INNER JOIN tasks t ON t.tas
             foreach ($tasks[0] as $task) {
                 echo $task;
             }
-             */
+             
+        *$sql="SELECT ut.user_id, ut.task_id, t.task_name, t.task_points, t.task_value
+        *FROM users_tasks ut
+        *INNER JOIN tasks t ON ut.task_id = t.task_id 
+        *WHERE ut.user_id = " .$_SESSION[id];
+        */
  ?>
         
         
