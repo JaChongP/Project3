@@ -1,22 +1,20 @@
 <?php
+    session_start();
+    include 'includes/database.php';
+    include 'includes/userManagement/uservar.php';
+    include 'includes/userManagement/levelup.php';
+    include 'includes/userManagement/assigntasks.php';
+    include 'includes/userManagement/completetasks.php';
+    
 
-session_start();
-include 'includes/database.php';
-
-if (!isset($_SESSION['loggedin'])) {
-	header('Location: HomePage.html');
-	exit;
-} else {
-
-$stmt = $conn->prepare('SELECT user_name, user_experience FROM users WHERE user_id = ?');
-
-$stmt->bind_param('i', $_SESSION['id']);
-$stmt->execute();
-$stmt->bind_result($name, $experience);
-$stmt->fetch();
-$stmt->close();
-}
+    if (!isset($_SESSION['loggedin'])) {
+        header('Location: index.php');
+        exit;
+    }
+        $sqlASSIGNED = "SELECT DISTINCT task_id FROM assigned_tasks WHERE user_id = ".$_SESSION['id']." AND completed = 0";
+        $resultsASSIGNED = $conn->query($sqlASSIGNED);
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -36,116 +34,60 @@ $stmt->close();
     </div>
 
     <div>
-            <h2><?= $name ?></h2>
+            <h2><?php echo $user['user_name'];?></h2>
 
-            <h5>Your actual experience is: <?= $experience ?> pts!</h5>
+            <h5>Level <?php echo $user['level_id'];?></h5>
             <h5>Earth Warrior</h5>
     </div>
 </section>
 
     <section class="grid-container">
-
         <div>
             <h4>Tasks</h4>
+            <div>
+                <form action="includes/completetask.php"  method="post">
+                    <?php while($assigned_task = $resultsASSIGNED->fetch_assoc()){
+                            $assigned_taskID = $assigned_task['task_id'];
 
-        <?php
- 
-          $sql = "SELECT * FROM tasks ORDER BY task_id;";
-            $result = mysqli_query($conn, $sql);
-            $resultCheck = mysqli_num_rows($result);
+                            $sqlSELECT = "SELECT * FROM tasks WHERE task_id = $assigned_taskID";
+                            $resultsSELECT = $conn->query($sqlSELECT);
 
-             
-        ?>
+                            echo $assigned_taskID;
+                        
+                            while($assigned = $resultsSELECT->fetch_assoc()){ 
+                            echo "<input type='submit' name='assignedtask' value='". $assigned['task_id'] ."'>
+                            ". $assigned['task_desc'] . "</input>";
+                            }
+                    } ?>
+                </form>
+            </div>
+            <div>
+                <form action="includes/assigntask.php"  method="post">
+                    <input type="submit" class="green-button" name="addtask" value="NewTask">
+                </form>
+            </div>
 
-
-<form method="post" action="TaskProcess.php">
-    <?php
-if ($resultCheck > 0) {
-    
-            while ($row = mysqli_fetch_assoc($result)) {
-                    //echo "<pre>"; print_r ($row); die();
-  
-            
-            echo "<input type='checkbox' value='".$row['task_id']."' name='task[]' id='checkbox_".$row['task_id']."'/>";
-            echo "<label for='checkbox_".$row['task_id']."'>" .$row ['task_name']."</label><br/>";
-             
-            }
-        }
-    ?>
-
-    <input type="hidden" name="user_id" value="<?=$_SESSION['id']?> "/>
-
-    <input type="submit" class="green-button" value="SUBMIT" name="submit">
-
-</form>
-
-
-
-<!-- 
-
-for each task that is "checked" add 1 to total number of tasks" 
-
-            --> 
-        
+<!-- for each task that is "checked" add 1 to total number of tasks" --> 
         </div>
+
         <div>
             
-    <h4>Progress</h4>
-    
-        <h4>Tasks</h4>
-
-
-        <?php
-        /**
-         
-        *$sql="SELECT ut.user_id, ut.task_id, t.task_name, t.task_points, t.task_value
-        *FROM users_tasks ut
-        *INNER JOIN tasks t ON ut.task_id = t.task_id 
-        *WHERE ut.user_id = " .$_SESSION[id];
-        */
-
-        $sql= "SELECT COUNT(ut.task_id) FROM users_tasks ut WHERE ut.user_id = ".$_SESSION[id];
-        $result = mysqli_query($conn, $sql);
-        $numberOfTasks = $result->fetch_row()[0];
-        //echo "<pre>"; print_r ($numberOfTasks); die();
+            <h4>Progress</h4>
         
-        ?>
-        <h1><?=$numberOfTasks;?></h1>
+            <h4>Tasks</h4>
 
-    </div>
-
-
-        
-    
-    
-    <div id="rewards-section">
-            <h4>Rewards</h4>
-        
-            <?php
-
-$sql= "SELECT SUM(t.task_points) FROM users_tasks ut INNER JOIN tasks t ON t.task_id=ut.task_id WHERE ut.user_id = ".$_SESSION[id];
-        $result = mysqli_query($conn, $sql);
-        $numberOfCoins = $result->fetch_row()[0];
-        //echo "<pre>"; print_r ($numberOfCoins); die();
-        
-        ?>
-
-        
-        <img src="images/coin.png">
-        <h1><?=$numberOfCoins;?></h1>
-            
-            
-
-  
-        
-        
         </div>
 
 
-
-
-
+        
     
+    
+        <div id="rewards-section">
+                <h4>Rewards</h4>
+                <img src="images/coin.png">
+                <h1><?php echo $user['user_coins'];?></h1>
+
+        </div>
 
         <div>
         <h4>Tip of the day</h4>
