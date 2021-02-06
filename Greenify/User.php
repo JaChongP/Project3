@@ -50,14 +50,11 @@
 
                         $sqlSELECT = "SELECT * FROM tasks WHERE task_id = $assigned_taskID";
                         $resultsSELECT = $conn->query($sqlSELECT);
-
-                        echo $assigned_taskID;
                     
                         while($assigned = $resultsSELECT->fetch_assoc()){ 
-                        echo "<input type='submit' name='assignedtask' value='". $assigned['task_id'] ."'>
-                        ". $assigned['task_desc'] . "</input>";
+                        echo "<input type='checkbox' onChange='submit();' name='assignedtask' value='". $assigned['task_id'] ."'>
+                         <lable for='assignedtask'> ". $assigned['task_desc'] . " </lable><br>";
                         }
-                        
                     } ?>
                 </form>
                 <form action="includes/assigntask.php"  method="post">
@@ -65,6 +62,7 @@
 		        </form>
 <!-- for each task that is "checked" add 1 to total number of tasks" --> 
         </div>
+        <label for=""></label>
 
         <div>
             

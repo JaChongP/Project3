@@ -34,7 +34,6 @@ if ($stmt = $conn->prepare('SELECT user_id, user_password FROM users WHERE user_
             $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
             $stmt->bind_param('sss', $_POST['name'], $_POST['email'], $password);
             $stmt->execute();
-            echo 'You have successfully registered, you can now login!';
 
 			header("location: ../Login.php");
 			exit();
