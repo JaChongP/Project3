@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include './database.php';
+    include 'database.php';
     include 'uservar.php';
     
         $sql = "SELECT DISTINCT task_id FROM assigned_tasks WHERE user_id = ".$_SESSION['id']." ";

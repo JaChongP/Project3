@@ -15,6 +15,7 @@
                     <li><a href="About.php">About</a></li>
                     <?php if (isset($_SESSION['loggedin'])) { ?>
                     <li><a href="User.php">Dashboard</a></li>
+                    <li><a href="includes/LogOut.php">Log Out</a></li>
                     <?php  } else { ?>
                     <li><a href="Login.php">Sign In</a></li>
                     <?php  } ?>

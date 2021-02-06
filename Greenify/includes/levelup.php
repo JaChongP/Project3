@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include './database.php';
+    include 'database.php';
     include 'uservar.php';
 
       $sql2 = "SELECT * FROM levels WHERE level_id = ".$user['user_level']." ";
