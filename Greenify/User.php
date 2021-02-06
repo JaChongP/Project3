@@ -23,6 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Greenify</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
 </head>
 <body class="user-page">
 
@@ -58,7 +59,7 @@
                     } ?>
                 </form>
                 <form action="includes/assigntask.php"  method="post">
-			        <input type="submit" class="green-button" name="addtask" value="add_newtask">
+			        <input type="submit" class="green-button" name="addtask" value="Add new task">
 		        </form>
 <!-- for each task that is "checked" add 1 to total number of tasks" --> 
         </div>
@@ -66,12 +67,17 @@
         <div>
             
             <h4>Progress</h4>
+            <h1>XP <?php echo $user['user_experience']; ?></h1>
         
-            <h4>Tasks</h4>
-                <?php
-                    $sqlComp = "SELECT COUNT(*) FROM assigned_tasks WHERE completed = 1 AND user_id = ".$user['user_id']." ";
-                    
-                ?>
+            <h4>Completed Tasks</h4>
+            <?php
+                $sql= "SELECT COUNT(task_id) FROM assigned_tasks WHERE completed = 1 AND user_id = ".$user['user_id'];
+                $result = mysqli_query($conn, $sql);
+                $numberOfTasks = $result->fetch_row()[0];
+                //echo "<pre>"; print_r ($numberOfTasks); die();
+
+            ?>
+                <h1><?=$numberOfTasks;?></h1>
         </div>
 
 
