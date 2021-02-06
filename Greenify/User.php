@@ -68,7 +68,10 @@
             <h4>Progress</h4>
         
             <h4>Tasks</h4>
-
+                <?php
+                    $sqlComp = "SELECT COUNT(*) FROM assigned_tasks WHERE completed = 1 AND user_id = ".$user['user_id']." ";
+                    
+                ?>
         </div>
 
 
