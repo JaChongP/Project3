@@ -487,9 +487,25 @@ input[type=text]:focus, input[type=password]:focus {
     padding: 1.5vw;
 }
 
-.grid-container p {
+.grid-container h3 {
     padding: 1.5vw;
 }
+
+.grid-container h1 {
+   text-align: center;
+   margin:0;
+}
+
+.grid-container img {
+    position: relative;
+    left: 40%;
+}
+
+.grid-container p {
+    padding: 0 1.5vw;
+    margin: 0;
+}
+
 
 .grid-container div {
     
@@ -497,6 +513,7 @@ input[type=text]:focus, input[type=password]:focus {
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    
 }
 
 
@@ -679,6 +696,18 @@ input[type=text]:focus, input[type=password]:focus {
   .progress-bar {
       width: 6vw;
   }
+
+
+
+  /*allt sem ég bæti við*/
+
+ .task-button {
+     margin-top: 10vh;
+ }
+
+ #rewards-section img {
+     width:40px;
+ }
 
  
 
