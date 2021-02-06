@@ -1,18 +1,18 @@
 <?php
+
     session_start();
     include 'includes/database.php';
-    include 'includes/uservar.php';
     include 'includes/levelup.php';
-    include 'includes/assigntasks.php';
-    include 'includes/completetasks.php';
-    
+    include 'includes/assigntask.php';
+    include 'includes/completetask.php';
+    include 'includes/uservar.php';
 
     if (!isset($_SESSION['loggedin'])) {
         header('Location: index.php');
         exit;
     }
-        $sqlASSIGNED = "SELECT DISTINCT task_id FROM assigned_tasks WHERE user_id = ".$_SESSION['id']." AND completed = 0";
-        $resultsASSIGNED = $conn->query($sqlASSIGNED);
+    $sqlASSIGNED = "SELECT DISTINCT task_id FROM assigned_tasks WHERE user_id = ".$_SESSION['id']." AND completed = 0";
+    $resultsASSIGNED = $conn->query($sqlASSIGNED);
 ?>
 
 
@@ -44,29 +44,25 @@
     <section class="grid-container">
         <div>
             <h4>Tasks</h4>
-            <div>
-                <form action="includes/completetasks.php"  method="post">
+                <form action="includes/completetask.php"  method="post">
                     <?php while($assigned_task = $resultsASSIGNED->fetch_assoc()){
-                            $assigned_taskID = $assigned_task['task_id'];
+                        $assigned_taskID = $assigned_task['task_id'];
 
-                            $sqlSELECT = "SELECT * FROM tasks WHERE task_id = $assigned_taskID";
-                            $resultsSELECT = $conn->query($sqlSELECT);
+                        $sqlSELECT = "SELECT * FROM tasks WHERE task_id = $assigned_taskID";
+                        $resultsSELECT = $conn->query($sqlSELECT);
 
-                            echo $assigned_taskID;
+                        echo $assigned_taskID;
+                    
+                        while($assigned = $resultsSELECT->fetch_assoc()){ 
+                        echo "<input type='submit' name='assignedtask' value='". $assigned['task_id'] ."'>
+                        ". $assigned['task_desc'] . "</input>";
+                        }
                         
-                            while($assigned = $resultsSELECT->fetch_assoc()){ 
-                            echo "<input type='submit' name='assignedtask' value='". $assigned['task_id'] ."'>
-                            ". $assigned['task_desc'] . "</input>";
-                            }
                     } ?>
                 </form>
-            </div>
-            <div>
-                <form action="includes/assigntasks.php"  method="post">
-                    <input type="submit" class="green-button" name="addtask" value="NewTask">
-                </form>
-            </div>
-
+                <form action="includes/assigntask.php"  method="post">
+			        <input type="submit" class="green-button" name="addtask" value="add_newtask">
+		        </form>
 <!-- for each task that is "checked" add 1 to total number of tasks" --> 
         </div>
 
@@ -92,50 +88,7 @@
         <div>
         <h4>Tip of the day</h4>
 
-        <?php
 
-            $result = mysqli_query($conn,"SELECT * FROM dailytips order by RAND() limit 1");
- 
-          
-            $i=0;
-            while($row = mysqli_fetch_array($result)) {
-            ?>
-
-            <tr>
-            <td>
-            
-            <?php $tip = $row['tip_name']; 
-            echo "<h4>{$tip}</h4>";
-
-            ?></td>
-           
-            </tr>
-            <?php
-            $i++;
-            }
-
-
-            /*
-             * $sql = "SELECT task_points FROM tasks"; //select the data
-            $result = mysqli_query($conn, $sql); //query it inside the database
-            $tasks = array(); //create an empty array 
-
-
-            if (mysqli_num_rows($result) > 0) {  //if there are more than 0 results, basically if there is any data available
-                while($row = mysqli_fetch_assoc($result)) { //run this loop - while we have results from the database, spit it out ($row is the data)
-                    
-                    $tasks[] = $row; //take the data ($row) and put it inside the $tasks array
-                }
-            }
-
-            //print_r($tasks);
-
-            foreach ($tasks[0] as $task) {
-                echo $task;
-            }
-             */
- ?>
-        
         
         </div>
 

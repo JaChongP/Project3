@@ -29,12 +29,15 @@ if ($stmt = $conn->prepare('SELECT user_id, user_password FROM users WHERE user_
 		
 		echo 'Email exists, please choose another!';
 	} else {
-		if ($stmt = $conn->prepare('INSERT INTO users (user_name, user_email, user_password, user_experience) VALUES (?, ?, ?, 0)')) {
+		if ($stmt = $conn->prepare('INSERT INTO users (user_name, user_email, user_password, level_id, user_experience, user_coins, lc_id) VALUES (?, ?, ?, 1, 0, 0,1)')) {
             
             $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
             $stmt->bind_param('sss', $_POST['name'], $_POST['email'], $password);
             $stmt->execute();
             echo 'You have successfully registered, you can now login!';
+
+			header("location: ../Login.php");
+			exit();
         } else {
             
             echo 'Could not prepare statement!';
