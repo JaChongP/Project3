@@ -45,7 +45,7 @@
         <div>
             <h4>Tasks</h4>
             <div>
-                <form action="includes/completetask.php"  method="post">
+                <form action="includes/userManagement/completetask.php"  method="post">
                     <?php while($assigned_task = $resultsASSIGNED->fetch_assoc()){
                             $assigned_taskID = $assigned_task['task_id'];
 
@@ -62,7 +62,7 @@
                 </form>
             </div>
             <div>
-                <form action="includes/assigntask.php"  method="post">
+                <form action="includes/userManagement/assigntask.php"  method="post">
                     <input type="submit" class="green-button" name="addtask" value="NewTask">
                 </form>
             </div>
