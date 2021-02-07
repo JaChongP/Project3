@@ -25,7 +25,7 @@
     <title>Greenify</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/shopInfo.css">
+    
 </head>
 <body class="user-page">
 <?php include "helpers/header.php"; ?>
@@ -33,7 +33,7 @@
 
 <section class="profile-top">
     <div>
-            <img src="images/Icons/Group 2.png">
+            <img src="images/avatar.png">
     </div>
 
     <div>
