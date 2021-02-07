@@ -20,7 +20,7 @@
         </div>
         <div class="NavigationBar" id="NB1">
             <nav>
-            <ul class="MenuTop">
+                <ul class="MenuTop">
                     <li><a href="About.php">About</a></li>
                     <?php if (isset($_SESSION['loggedin'])) { ?>
                     <li><a href="User.php">Dashboard</a></li>

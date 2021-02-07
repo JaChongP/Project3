@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    include 'includes/database.php';
+    include 'includes/uservariable.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,8 +20,14 @@
         <div class="NavigationBar" id="NB1">
             <nav>
                 <ul class="MenuTop">
-                    <li><a href="About.html">About</a></li>
-                    <li><a href="Login.php">Sign in</a></li>
+                    <li><a href="About.php">About</a></li>
+                    <?php if (isset($_SESSION['loggedin'])) { ?>
+                    <li><a href="User.php">Dashboard</a></li>
+                    <li><a href="includes/logout.php">Sign Out</a></li>
+                    <?php  } else { ?>
+                    <li><a href="SignUp.php">Sign Up</a></li>
+                    <li><a href="Login.php">Sign In</a></li>
+                    <?php  } ?>
                 </ul>
             </nav>
         </div>
@@ -105,7 +117,7 @@
                         </li>
                         <li>
                             <div class="quiz-overlay"></div>
-                            <input type="submit" value="Submit Quiz" id="submit-quiz" />
+                            <input type="submit" class="green-button" value="Submit Quiz" id="submit-quiz" />
                         </li>
                     </ul>
                 </form> 
