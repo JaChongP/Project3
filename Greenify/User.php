@@ -79,7 +79,7 @@
         $result = mysqli_query($conn, $sql);
         $numberOfTasks = $result->fetch_row()[0];
         //echo "<pre>"; print_r ($numberOfTasks); die();
-        
+        ?>
             <h4>Completed Tasks</h4>
             <?php
                 $sql= "SELECT COUNT(task_id) FROM assigned_tasks WHERE completed = 1 AND user_id = ".$user['user_id'];
@@ -97,8 +97,8 @@
                 <img src="images/coin.png">
                 <h1><?php echo $user['user_coins'];?></h1>
 
-
-$sql= "SELECT SUM(t.task_points) FROM users_tasks ut INNER JOIN tasks t ON t.task_id=ut.task_id WHERE ut.user_id = ".$_SESSION[id];
+        <?php
+        $sql= "SELECT SUM(t.task_points) FROM users_tasks ut INNER JOIN tasks t ON t.task_id=ut.task_id WHERE ut.user_id = ".$_SESSION[id];
         $result = mysqli_query($conn, $sql);
         $numberOfCoins = $result->fetch_row()[0];
         //echo "<pre>"; print_r ($numberOfCoins); die();
