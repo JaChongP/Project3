@@ -1,3 +1,12 @@
+<?php
+    session_start();
+    include 'includes/database.php';
+    
+    $sql = "SELECT * FROM stores ORDER BY store_id DESC "; 
+    $result = $conn->query($sql); 
+    $conn->close();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,84 +14,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Greenify</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/shopInfo.css">
 </head>
 <body class="profile-pages">
 
-   <header>    
-            <nav>
-                </div>
-
-                <div class="side-nav">
-                <ul class="side-nav">
-                    <li><div class="logo-white">
-                        <img src="images/logo-white.png">
-                    </div></li>
-                    <li><a href="User.html"><img src="images/icon-home.png" class="small-icon">Home</a></li>
-                    <li><a href="ShopInfo.html"><img src="images/icon-stores.png" class="small-icon">Stores</a></li>
-                    <li><a href=""><img src="images/icon-guide.png" class="small-icon">Guide</a></li>
-                  </ul>
-                </div>
-            
-            </nav>
-
-            <div class="top-nav-user">
-                <ul class="top-nav-user">
-                    <li><a href="">Sign Out</a></li>
-                    <li><a href="">Redeem</a></li>
-                
-                </ul>
-            </div>
-</header>
+<?php include "includes/complements/usernav.php" ?>
 
 
 <section class="stores-heading">
-  <div><h2>Stores</h2></div>
-  
-    <div class="store-categories">
-            <h5>All</h5>
-            <h5>Beauty</h5>
-            <h5>Clothing</h5>
-            <h5>Food</h5>
-    </div>
+  <div><h1>Stores</h1></div>
+        <div class="store-categories">
+            <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+            <button class="btn" onclick="filterSelection('Beauty')"> Beauty</button>
+            <button class="btn" onclick="filterSelection('Food')"> Food</button>
+            <button class="btn" onclick="filterSelection('Clothing')"> Clothing</button>
+            <button class="btn" onclick="filterSelection('Interior Design')"> Interior Design</button>
+        </div>
 </section>
 
     <section class="grid-container">
-        <div class="store">
-            <h4>Store name</h4>
-            <p>Image</p>
-            <p>Short description</p>
+        <?php   
+            while($rows=$result->fetch_assoc()) 
+            { 
+        ?>
+        <div class="store-item">
+            <img src="images/Photos/Stores/<?php echo $rows['store_image'];?>">
+            <h4> <?php echo $rows['store_name']; ?> </h4>
+            <h6> <?php echo $rows['store_desc']; ?> </h6>
+            <a href="<?php echo $rows['store_website']; ?>" class="green-button">GO TO WEBSITE</a>
         </div>
-
-        <div class="store">
-            <h4>Store name</h4>
-            <p>Image</p>
-            <p>Short description</p>
-        </div>
-
-        <div class="store">
-            <h4>Store name</h4>
-            <p>Image</p>
-            <p>Short description</p>
-        </div>
-
-        <div class="store">
-            <h4>Store name</h4>
-            <p>Image</p>
-            <p>Short description</p>
-        </div>
-
-        <div class="store">
-            <h4>Store name</h4>
-            <p>Image</p>
-            <p>Short description</p>
-        </div>
-
-        <div class="store">
-            <h4>Store name</h4>
-            <p>Image</p>
-            <p>Short description</p>
-        </div>
-    
+        <?php 
+            } 
+        ?> 
     </section>
 
 

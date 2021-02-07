@@ -5,5 +5,5 @@
 
   session_destroy();
 
-  header('Location: /GitHub/Project3/Greenify/HomePage.html');
+  header('Location: /GitHub/Project3/Greenify/index.php');
 ?>
