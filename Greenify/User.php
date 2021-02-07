@@ -5,6 +5,7 @@
     include 'includes/uservariable.php';
     include 'includes/assigntasks.php';
     include 'includes/completetask.php';
+    include 'includes/levelup.php';
 
     if (!isset($_SESSION['loggedin'])) {
         header('Location: index.php');
@@ -55,7 +56,7 @@
                     
                         while($assigned = $resultsSELECT->fetch_assoc()){ 
                         echo "<input type='checkbox' onChange='submit();' name='assignedtask' value='". $assigned['task_id'] ."'>
-                         <lable for='assignedtask'> ". $assigned['task_desc'] . " </lable><br>";
+                         <lable for='assignedtask'> ". $assigned['task_desc'] . " </lable><br><br>";
                         }
                     } ?>
                 </form>
@@ -65,6 +66,10 @@
         </div>
 
         <div><h4>Progress</h4>
+            <h5>Experience</h5>
+                <h1>XP <?php echo $user['user_experience']?></h1>
+                <p>You need <?php echo $levels['level_maxexp']?> pts to level Up</p>
+
             <h5>Completed Tasks</h5>
             <?php
                 $sql= "SELECT COUNT(task_id) FROM assigned_tasks WHERE completed = 1 AND user_id = ".$user['user_id'];
