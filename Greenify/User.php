@@ -67,8 +67,18 @@
 
         <div>
             
-            <h4>Progress</h4>
-            <h1>XP <?php echo $user['user_experience']; ?></h1>
+    <h4>Progress</h4>
+    
+        <h4>Tasks</h4>
+
+
+        <?php
+
+        
+        $sql= "SELECT COUNT(ut.task_id) FROM users_tasks ut WHERE ut.user_id = ".$_SESSION[id];
+        $result = mysqli_query($conn, $sql);
+        $numberOfTasks = $result->fetch_row()[0];
+        //echo "<pre>"; print_r ($numberOfTasks); die();
         
             <h4>Completed Tasks</h4>
             <?php
@@ -81,17 +91,28 @@
                 <h1><?=$numberOfTasks;?></h1>
         </div>
 
-
-        
-    
     
         <div id="rewards-section">
                 <h4>Rewards</h4>
                 <img src="images/coin.png">
                 <h1><?php echo $user['user_coins'];?></h1>
 
+
+$sql= "SELECT SUM(t.task_points) FROM users_tasks ut INNER JOIN tasks t ON t.task_id=ut.task_id WHERE ut.user_id = ".$_SESSION[id];
+        $result = mysqli_query($conn, $sql);
+        $numberOfCoins = $result->fetch_row()[0];
+        //echo "<pre>"; print_r ($numberOfCoins); die();
+        
+        ?>
+
+        
+        <img src="images/coin.png">
+        <h1><?=$numberOfCoins;?></h1>
+    
+        
         </div>
 
+        
         <div>
         <h4>Tip of the day</h4>
         <?php
