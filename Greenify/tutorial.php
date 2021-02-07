@@ -98,7 +98,7 @@
                 </p>
                 <img src="images/progress5.png" class="progress-bar">
                 <div class="button-container">
-                    <div class="gototab"><a href="User.php"><button>NEXT</button></a></div>
+                    <div class="gototab"><a href="Login.php"><button>NEXT</button></a></div>
                   </div>
               </div>
 

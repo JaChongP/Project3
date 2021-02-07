@@ -159,7 +159,7 @@
             <h4>Coupons</h4>
             <section class="coupons-section">
                 <?php
-                    $sql = "SELECT * FROM user_redeem WHERE user_id = $userID";
+                    $sql = "SELECT * FROM user_redeem WHERE user_id = $userID LIMIT 3";
                     $results = $conn->query($sql);
 
                     while($userCoupon = $results->fetch_assoc()){

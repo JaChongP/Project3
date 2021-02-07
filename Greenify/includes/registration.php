@@ -32,7 +32,7 @@
 				$stmt->bind_param('sss', $_POST['name'], $_POST['email'], $password);
 				$stmt->execute();
 
-				header("location: ../Login.php");
+				header("location: ../tutorial.php");
 				exit();
 			} else {
 				
