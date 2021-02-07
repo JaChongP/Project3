@@ -139,9 +139,8 @@ h6 {
     font-size: 14px;
     color: #38665D;
     padding: 0;
-    margin: 20px;
+    margin: 20px 0;
     font-weight: 400;
-    font-weight: 300;
 }
 
 p {
@@ -413,30 +412,24 @@ input[type=text]:focus, input[type=password]:focus {
 .profile-top {
     display: grid;
     grid-template-columns: 1fr 5fr;
-    margin: 5% 10% 0 25%;
+    margin: 5% 0 3% 10%;
 }
 
 .profile-top img {
-    width: 7vw;
-    height: 7vw;
+    width: 8vw;
+    margin-right: 2vw;
+    
 }
 
 .grid-container {
     display: grid;
-    margin: 3% 10% 0 25%;
-    padding-bottom: 40vh;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 4px;
-    align-items: center;
-    justify-content: center;
+    grid-gap: 50px;
+    margin: 2vw 5vw;
 }
 
 .grid-container h4 {
-    padding: 1.5vw;
-}
-
-.grid-container p {
-    padding: 1.5vw;
+    padding: 2vh 0 4vh 0;
 }
 
 .grid-container div {
@@ -447,11 +440,105 @@ input[type=text]:focus, input[type=password]:focus {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
+#coin-img {
+    width: 5vw;
+}
+
+#badge-img {
+    width: 5vw;
+}
+
+#progress h1 {
+    margin: 0;
+    padding: 0;
+}
+
+#progress h6 {
+    margin: 2vh 0 3vh;
+    padding: 0;
+}
+
+#rewards h1 {
+    margin: 2vh 0;
+    
+}
+
+#tasks label {
+    font-weight: 300;
+}
+
+.dashboard-box {
+    padding: 5% 10%;
+}
+
+.progress-section {
+    display: flex;
+    margin-top: 4vh
+}
+
+#progress img {
+    width: 14vw;
+    position: relative;
+    left: 10%;
+}
+
+#badges img {
+    width: 5vw;
+    margin: 2%;
+}
+
+.badge-container {
+    display: flex;
+    
+}
+
+.rewards-section {
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    padding-top: 4vh;
+}
+
+.coupons-section {
+    text-align: center;
+}
+
+.coupons-section h5 {
+    font-size: 18px;
+    margin-top: 1vh;
+    font-weight: 600;
+}
+
+#coupons a {
+    color:  white;
+    text-decoration: none;
+}
+
+#coupons button {
+    background-color:#38665D;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 12px;
+    font-family: 'Open Sans', sans-serif;
+    transition-duration: 0.4s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    letter-spacing: 1.6px;
+    margin-top: 2vh;
+}
+
+
+
+
+
 
 /* guide page */
 
 .guide-body {
-    margin: 3% 10% 0 25%;
+    margin: 3% 10% 0 10%;
 }
 
 .guide-heading {

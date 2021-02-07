@@ -45,7 +45,7 @@
 </section>
 
     <section class="grid-container">
-        <div>
+        <div id="tasks" class="dashboard-box">
             <h4>Tasks</h4>
                 <form action="includes/completetask.php"  method="post">
                     <?php while($assigned_task = $resultsASSIGNED->fetch_assoc()){
@@ -56,36 +56,75 @@
                     
                         while($assigned = $resultsSELECT->fetch_assoc()){ 
                         echo "<input type='checkbox' onChange='submit();' name='assignedtask' value='". $assigned['task_id'] ."'>
-                         <lable for='assignedtask'> ". $assigned['task_desc'] . " </lable><br><br>";
+                         <label for='assignedtask'> ". $assigned['task_desc'] . " </label><br><br>";
                         }
                     } ?>
                 </form>
                 <form action="includes/assigntasks.php"  method="post">
-			        <input type="submit" class="green-button" name="addtask" value="Add new task">
+			        <input type="submit" class="green-button" name="addtask" value="ADD TASK">
 		        </form>
         </div>
 
-        <div><h4>Progress</h4>
-            <h5>Experience</h5>
-                <h1>XP <?php echo $user['user_experience']?></h1>
-                <p>You need <?php echo $levels['level_maxexp']?> pts to level Up</p>
 
-            <h5>Completed Tasks</h5>
-            <?php
-                $sql= "SELECT COUNT(task_id) FROM assigned_tasks WHERE completed = 1 AND user_id = ".$user['user_id'];
-                $result = mysqli_query($conn, $sql);
-                $numberOfTasks = $result->fetch_row()[0];
-                //echo "<pre>"; print_r ($numberOfTasks); die();
-            ?>
-                <h1><?=$numberOfTasks;?></h1>
-        </div>
 
-        <div><h4>Rewards</h4>
-            <img src="images/coin.png">
-            <h1><?php echo $user['user_coins'];?></h1>
-        </div>
+        <div id="progress" class="dashboard-box">
+            
+        <h4>Progress</h4>
+
+                <section class="progress-section">
+                    
+                <section class="experience">
+                <h5>Experience</h5>
+                        <h2><?php echo $user['user_experience']?>xp</h2>
+                        <h6>You need <?php echo $levels['level_maxexp']?> xp to level up!</h6>
+                </section>
         
-        <div>
+        <section class="completed-tasks">
+
+                <h5>Tasks</h5>
+                <?php
+                    $sql= "SELECT COUNT(task_id) FROM assigned_tasks WHERE completed = 1 AND user_id = ".$user['user_id'];
+                    $result = mysqli_query($conn, $sql);
+                    $numberOfTasks = $result->fetch_row()[0];
+                    //echo "<pre>"; print_r ($numberOfTasks); die();
+                ?>
+                    <h2><?=$numberOfTasks;?></h2>
+               
+                    </section>
+                </section>
+
+                
+                <img src="images/progress-graph.png">
+        </div>
+
+
+
+        <div id="rewards" class="dashboard-box">
+            
+        
+        <h4>Rewards</h4>
+            
+            <section class="rewards-section">
+
+                <section class="coins-section">
+                    <img src="images/coin.png" id="coin-img">
+                    <h2><?php echo $user['user_coins'];?></h2>
+                
+                </section>
+
+                    <section class="badge-section">
+                    <img src="images/badge.png" id="badge-img">
+                    <h2>3</h2>
+                
+                </section>
+
+
+            </section>
+        </div>
+
+        
+        <div class="dashboard-box">
+
             <h4>Tip of the day</h4>
             <?php
                 $result = mysqli_query($conn,"SELECT * FROM dailytips order by RAND() limit 1");
@@ -102,10 +141,23 @@
                 } ?>
             </div>
 
-        <div><h4>Badges</h4></div>
+        <div id="badges" class="dashboard-box">
+            
+        <h4>Badges</h4>
 
-        <div>
-            <h4>Coupons Redeemed</h4>
+        <section class="badge-container">
+
+                <img src="images/badge.png">
+                <img src="images/badge.png">
+                <img src="images/badge.png">
+
+            </section>
+    </div>
+
+        <div id="coupons" class="dashboard-box">
+
+            <h4>Coupons</h4>
+            <section class="coupons-section">
                 <?php
                     $sql = "SELECT * FROM user_redeem WHERE user_id = $userID";
                     $results = $conn->query($sql);
@@ -121,11 +173,14 @@
                             $discount_image = $rows['discount_image'];
                     }
                 ?>
-                <h6><?php echo $discount;?></h6>
+                
+                <h5><?php echo $discount;?></h5>
                 <h5><?php echo $discount_store;?></h5>
-                <a download="qr.png" href="images/Photos/cupons/<?php echo $discount_image;?>">Download QR</a>
+               
+                <button><a download="qr.png" href="images/Photos/cupons/<?php echo $discount_image;?>">QR CODE</a></button>
 
                 <?php } ?>
+                </section> 
         </div>
     </section>
 

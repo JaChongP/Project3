@@ -96,10 +96,10 @@
         </section>
 
         <section class="Feature inline-photo show-on-scroll">
-            <img src="images/.png">
+            <img src="images/Photos/Juliana.png">
             <h2>Júlíana Björt Ívarsdóttir</h2>
             <p>
-                MISSING TEXT.
+                From Iceland, studying multimedia design in Copenhagen, currently doing an exchange semester in Creative Technologies at IADE, Lisbon. 
             </p>
         </section>
 
