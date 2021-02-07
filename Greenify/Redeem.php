@@ -3,7 +3,7 @@
     include 'includes/database.php';
     include 'includes/uservariable.php';
     
-    $sql = "SELECT * FROM redeem"; 
+    $sql = "SELECT * FROM redeem ORDER BY coupon_id DESC LIMIT 3"; 
     $result = $conn->query($sql); 
     $conn->close();
 ?>

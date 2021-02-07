@@ -9,7 +9,7 @@
 <body class="login-body">
 <header class="header-about" id="Header1">
         <div class="Logo" id="Logo1">
-            <a href="HomePage.html"><img src="images/logoGreenify.png"></a>
+            <a href="index.php"><img src="images/logoGreenify.png"></a>
         </div>
         <div class="NavigationBar" id="NB1">
             <nav>

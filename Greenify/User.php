@@ -146,12 +146,17 @@
         <h4>Badges</h4>
 
         <section class="badge-container">
-
-                <img src="images/badge.png">
-                <img src="images/badge.png">
-                <img src="images/badge.png">
-
+            <section class="badge-section">
+            <img src="images/badge.png" id="badge-img">
             </section>
+            <br>
+            <section class="badge-section">
+            <img src="images/badge.png" id="badge-img">
+            </section>
+            <section class="badge-section">
+            <img src="images/badge.png" id="badge-img">
+            </section>
+        </section>
     </div>
 
         <div id="coupons" class="dashboard-box">
@@ -159,7 +164,7 @@
             <h4>Coupons</h4>
             <section class="coupons-section">
                 <?php
-                    $sql = "SELECT * FROM user_redeem WHERE user_id = $userID LIMIT 3";
+                    $sql = "SELECT * FROM user_redeem WHERE user_id = $userID ORDER BY redeem_id DESC LIMIT 3";
                     $results = $conn->query($sql);
 
                     while($userCoupon = $results->fetch_assoc()){

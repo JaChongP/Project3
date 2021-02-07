@@ -17,6 +17,10 @@
         $query = "UPDATE users SET level_id = level_id + 1 WHERE user_id = ".$user['user_id']." ";
         $result = $conn->query($query);
         $conn->close();
+
+        header("GitHub/Project3/Greenify/User.php");
+        exit();
+
     } else {
         $user['level_id'] = $levels['level_id'];
     }
@@ -24,6 +28,8 @@
     if($user['level_id'] == 6){
         $query2 = "UPDATE users SET lc_id = 2 WHERE user_id = ".$user['user_id']." ";
         $result2 = $conn->query($query2);
+        header("GitHub/Project3/Greenify/User.php");
+        exit();
     } else if($user['level_id'] == 11){
         $query3 = "UPDATE users SET lc_id = 3 WHERE user_id = ".$user['user_id']." ";
         $result3 = $conn->query($query3);
