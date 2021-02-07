@@ -5,24 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Greenify</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    
 </head>
 <body>
 
     <div class="bg">
+    <?php include "includes/complements/navbar.php" ?>
 
-    <header class="header" id="Header1">
-        <div class="Logo" id="Logo1">
-            <a href="HomePage.html"><img src="images/logoGreenify.png"></a>
-        </div>
-        <div class="NavigationBar" id="NB1">
-            <nav>
-                <ul class="MenuTop">
-                    <li><a href="About.html">About</a></li>
-                    <li><a href="Login.php">Sign In</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
 
        
@@ -75,23 +65,7 @@
    
 
 
-<footer>
-
-
-    <div class="footer-icons">
-
-            <img src="images/icon-facebook.svg">
-            <img src="images/icon-instagram.svg">
-            <img src="images/icon-linkedin.svg">
-
-    </div>
-
-    <div>
-            <p>© 2020 Greenify. All rights reserved </p>
-    </div>
-
- </footer>
-
+    <?php include "includes/complements/footer.php" ?>
  <script src="js/script.js"></script>
 
 </body>
