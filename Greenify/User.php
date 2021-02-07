@@ -6,6 +6,7 @@
     include 'includes/assigntask.php';
     include 'includes/completetask.php';
     include 'includes/uservar.php';
+    include 'icludes/redeemcoupons.php';
 
     if (!isset($_SESSION['loggedin'])) {
         header('Location: index.php');
@@ -99,6 +100,7 @@
  
             $i=0;
             while($row = mysqli_fetch_array($result)) {
+                
             ?>
 
             <tr>
@@ -146,7 +148,30 @@
         </div>
 
         <div><h4>Badges</h4></div>
-        <div><h4>CO<sub>2</sub> Consumption</h4></div>
+        <div>
+
+        <h4>Coupons Redeemed</h4>
+            <?php
+                $sql = "SELECT * FROM user_redeem WHERE user_id = $userID";
+                $results = $conn->query($sql);
+
+                while($userCoupon = $results->fetch_assoc()){
+                    $userCouponID = $userCoupon['coupon_id'];
+
+                    $sql_s = "SELECT * FROM redeem WHERE coupon_id = $userCouponID";
+                    $result_s = $conn->query($sql_s);
+                    while($rows = $result_s->fetch_assoc()) {
+                        $discount = $rows['discount'];
+                        $discount_store = $rows['discount_store'];
+                        $discount_image = $rows['discount_image'];
+                }
+            ?>
+            <h6><?php echo $discount;?></h6>
+            <h5><?php echo $discount_store;?></h5>
+            <a download="qr.png" href="images/Photos/cupons/<?php echo $discount_image;?>">Download QR</a>
+
+            <?php } ?>
+        </div>
     </section>
 
  <script src="js/script.js"></script>

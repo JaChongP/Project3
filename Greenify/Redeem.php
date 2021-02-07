@@ -35,7 +35,9 @@
             <h6> <?php echo $rows['discount']; ?> </h6>
             <h4> <?php echo $rows['discount_store']; ?> </h4>
             <h6> <?php echo $rows['discount_desc']; ?> </h6>
-            <a href="" class="green-button">REDEEM</a>
+            <form action="includes/redeemcoupon.php" method="post">
+            <button type="submit" class="green-button" name="redeem" value=<?php echo $rows['coupon_id']?>>REDEEM</button>
+            </form>
         </div>
         <?php 
             } 
